@@ -1,0 +1,38 @@
+<div ng-controller="mainCtrl">
+	<div class="row">
+		<div class="col s12 m12 l3" ng-repeat="image in images">
+			<div class="card grey lighten-5">
+				<div class="card-image">
+					<img ng-src="{{ image.src }}" />
+					<span class="card-title">{{ image.uploadedBy }}</span>
+				</div>
+				<div class="card-content">
+					<button class="activator btn-sidenav grey lighten-5 grey-text text-darken-4 right">
+						<i class="mdi-communication-comment comment-symbol right caption"></i>
+						<span class="right caption">{{ image.commentsNumber }}</span>
+					</button>
+					<h6 class="caption">{{ image.caption }}</h6>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">Comments <i class="mdi-navigation-close right"></i></span>
+					<ul class="collection comments" lr-infinite-scroll="getComments">
+						<li ng-repeat="comment in image.comments" class="collection-item">
+							<b>@{{ comment.commentedBy }}:</b> {{ comment.commentBody }}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ul class="actions">
+		<li class="list-action"><a class="btn-floating red"><i class="large mdi-image-photo-camera"></i></a></li>
+		<li class="list-action"><a class="btn-floating yellow darken-3"><i class="large mdi-editor-insert-photo"></i></a></li>
+		<li class="list-action"><a class="btn-floating green"><i class="large mdi-hardware-keyboard-voice"></i></a></li>
+		<li class="list-action"><a class="btn-floating blue"><i class="large mdi-editor-mode-edit"></i></a></li>
+	</ul>
+	<div class="fixed-action-btn" style="bottom: 30px; right: 24px;">
+		<a class="btn-floating btn-add-floating btn-large red">
+			<i class="large mdi-content-add caption add-photo"></i>
+		</a>
+	</div>
+</div>

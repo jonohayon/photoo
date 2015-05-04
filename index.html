@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Photoo</title>
+
+		<link rel="stylesheet" type="text/css" href="/css/photoo.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	</head>
+	<body ng-app="photoo">
+		<div class="navbar-fixed" ng-controller="navCtrl">
+			<nav>
+				<div class="navbar-wrapper">
+					<a href="#" class="brand-logo center">Photoo</a>
+				</div>
+				<ul class="side-nav sidebar left">
+					<button class="btn-closenav" ng-click="toggleSideNav()">
+						<h4 class="mdi-content-clear grey-text"></h4>
+					</button>
+					<li><a ui-sref="profile">Profile</a></li>
+					<li><a ui-sref="search">Search</a></li>
+					<li><a ui-sref="settings">Settings</a></li>
+				</ul>
+				<button class="button-collapse btn-sidenav teal valign" ng-click="toggleSideNav()">
+					<i class="mdi-navigation-menu"></i>
+				</button>
+			</nav>
+		</div>
+
+		<div class="overlay"></div>
+		<div ui-view></div>
+
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="/js/jquery.sidebar.min.js"></script>
+		<script src="/js/materialize.min.js"></script>
+		<script src="/js/angular.min.js"></script>
+		<script src="/js/lrInfiniteScroll.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>

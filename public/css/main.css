@@ -1,0 +1,46 @@
+html, body, .overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+html, body {
+	background-color: #B6B6B6;
+}
+
+.overlay {
+	z-index: 2;
+	display: none;
+	opacity: 0.6;
+	background-color: #cfd8dc;
+}
+
+div[ui-view] {
+	z-index: 1;
+}
+
+.btn-sidenav {
+	border: none;
+}
+
+.btn-closenav {
+	border: none;
+	background-color: transparent;
+}
+
+.caption {
+	font-size: 1.3em;
+}
+
+.actions {
+	position: fixed;
+	right: 33px;
+	bottom: 90px;
+	display: none;
+	z-index: 3;
+}
+
+.actions li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
